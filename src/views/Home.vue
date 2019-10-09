@@ -14,15 +14,16 @@
         </div>
       </el-upload>
     </div>
-
-    <Choice
+    <el-drawer
       title="选择风格"
       :visible.sync="drawer"
       direction="btt"
       size="68%"
       :show-close="false"
       :before-close="handleClose"
-    />
+    >
+      <Choice />
+    </el-drawer>
   </div>
 </template>
 
@@ -79,7 +80,6 @@ export default {
 </script>
 
 <style>
-
 .avatar-uploader .el-upload {
   border-radius: 8px;
   cursor: pointer;
@@ -92,8 +92,8 @@ export default {
 .avatar-uploader-icon {
   font-size: 36px;
   color: #060;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   line-height: 180px;
   text-align: center;
 }
@@ -119,6 +119,4 @@ export default {
   box-shadow: 0 6rpx 10rpx 2rpx #ccc !important;
   object-fit: cover;
 }
-
-
 </style>
