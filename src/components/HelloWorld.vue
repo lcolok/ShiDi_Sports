@@ -203,6 +203,6 @@ export default {
   width: 100%;
   height: 100%;
   box-shadow: 0 6rpx 10rpx 2rpx #ccc !important;
-  object-fit: fill;
+  object-fit: cover;
 }
 </style>
