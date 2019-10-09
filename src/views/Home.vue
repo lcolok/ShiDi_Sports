@@ -1,7 +1,7 @@
 
 <template>
   <div style="position:fixed;top:2px; bottom:2px; left:2px; right:2px;" :style="xsadd">
-    <img class="casda" src="../assets/sy.png" />
+    <img class="casda" src="https://dn-shimo-attachment.qbox.me/wR83Zha3vJgAGxP0/%E9%A6%96%E9%A1%B5.png" />
     <div style="position:fixed;bottom:10%; left:50%;transform: translate(-50%,-50%);">
       <el-upload
         class="avatar-uploader"
@@ -10,7 +10,7 @@
         :before-upload="beforeAvatarUpload"
       >
         <div class="avatar-uploader-icon">
-          <img class="casda" src="../assets/222.png" />
+          <img class="casda" src="https://dn-shimo-attachment.qbox.me/bxTW5pBoIVcBxYGb/%E7%82%B9%E5%87%BB%E4%B8%8A%E4%BC%A0%E6%8C%89%E9%92%AE.png" />
         </div>
       </el-upload>
     </div>
