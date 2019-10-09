@@ -35,14 +35,13 @@
     >
       <el-tooltip
         :value="centerDialogVisible"
-  
         manual
         class="item"
         effect="dark"
         content="请长按保存后，分享给朋友吧"
         placement="top"
       >
-          <Poster />
+        <Poster :chosenStyle="chosenStyle" :imageUrl="imageUrl"/>
       </el-tooltip>
       <!-- <span slot="footer" class="dialog-footer">
           <el-button @click="centerDialogVisible = false">取 消</el-button>
@@ -56,17 +55,20 @@
 import Poster from "@/components/Poster";
 export default {
   name: "Choice",
+
   components: {
     Poster
   },
   data() {
     return {
-      clicksth: 1,
-      imageUrl: "",
+      chosenStyle: null,
       loading: false,
       dataURL: "",
       centerDialogVisible: false
     };
+  },
+  props: {
+    imageUrl: String
   },
   methods: {
     // 保存
@@ -89,7 +91,7 @@ export default {
 
     openliul(item) {
       this.dataURL = "";
-      this.clicksth = item;
+      this.chosenStyle = item;
       this.centerDialogVisible = true;
     }
   }

@@ -22,7 +22,7 @@
       :show-close="false"
       :before-close="handleClose"
     >
-      <Choice />
+      <Choice :imageUrl="imageUrl"/>
     </el-drawer>
   </div>
 </template>
@@ -41,7 +41,8 @@ export default {
   data() {
     return {
       xsadd: "",
-      drawer: false
+      drawer: false,
+      imageUrl:""
     };
   },
   methods: {
