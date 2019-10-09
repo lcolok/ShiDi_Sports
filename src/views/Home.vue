@@ -32,7 +32,6 @@
 
 
 <script>
-import html2canvas from "html2canvas";
 import Choice from "@/components/Choice";
 export default {
   components: {

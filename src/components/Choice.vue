@@ -79,17 +79,6 @@ export default {
     fail(err) {
       console.log("fail", err);
     },
-    generatorImage() {
-      this.loading = true;
-      html2canvas(this.$refs.imageWrapper, {
-        backgroundColor: null
-      }).then(canvas => {
-        let dataURL = canvas.toDataURL("image/jpeg");
-        this.dataURL = dataURL;
-        this.loading = false;
-      });
-    },
-
     openliul(item) {
       this.dataURL = "";
       this.chosenStyle = item;
