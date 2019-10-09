@@ -18,7 +18,7 @@
       title="选择风格"
       :visible.sync="drawer"
       direction="btt"
-      size="50%"
+      size="68%"
       :show-close="false"
       :before-close="handleClose"
     >
@@ -26,14 +26,13 @@
         <el-carousel
           :autoplay="false"
           type="card"
-          height="100%"
+          width="100%"
           style="position:absolute;top:15%;bottom:5%; left:20px; right:20px;"
         >
           <el-carousel-item v-for="item in 3" :key="item">
-            <img v-if="item==1" @click="openliul(item)" class="casda" src="../assets/1.png" />
-
-            <img v-else-if="item==2" @click="openliul(item)" class="casda" src="../assets/2.png" />
-            <img v-else @click="openliul(item)" class="casda" src="../assets/3.png" />
+            <img v-if="item==1" @click="openliul(item)" class="styleChoose" src="https://dn-shimo-attachment.qbox.me/2JYt1b6tBVADPy5x/demo1-1.png" />
+            <img v-else-if="item==2" @click="openliul(item)" class="styleChoose" src="https://dn-shimo-attachment.qbox.me/mRdLTDGYcZEutnyW/demo2-1.png" />
+            <img v-else @click="openliul(item)" class="styleChoose" src="https://dn-shimo-attachment.qbox.me/t914RfGAZ7MYyAz9/demo3-1.png" />
           </el-carousel-item>
           <el-dialog
             custom-class="sdada"
@@ -62,18 +61,18 @@
                     <img
                       v-if="clicksth==1"
                       style="width: 100%;height:100%;object-fit:fill;"
-                      src="../assets/1.png"
+                      src="https://dn-shimo-attachment.qbox.me/ySxU0F4rbn4F9AgL/%E7%85%A7%E7%89%871-1.png"
                     />
 
                     <img
                       v-else-if="clicksth==2"
                       style="width: 100%;height:100%;object-fit:fill;"
-                      src="../assets/2.png"
+                      src="https://dn-shimo-attachment.qbox.me/KUZB6YbsIwI9pyqe/%E7%85%A7%E7%89%872-1.png"
                     />
                     <img
                       v-else
                       style="width: 100%;height:100%;object-fit:fill;"
-                      src="../assets/3.png"
+                      src="https://dn-shimo-attachment.qbox.me/s8eBgc4H64UeTndW/%E7%85%A7%E7%89%873-1.png"
                     />
                   </div>
                 </slot>
@@ -204,5 +203,12 @@ export default {
   height: 100%;
   box-shadow: 0 6rpx 10rpx 2rpx #ccc !important;
   object-fit: cover;
+}
+
+.styleChoose {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 6rpx 10rpx 2rpx #ccc !important;
+  object-fit: contain;
 }
 </style>
