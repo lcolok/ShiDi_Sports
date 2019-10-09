@@ -22,7 +22,7 @@
       :show-close="false"
       :before-close="handleClose"
     >
-      <Choice :imageUrl="imageUrl"/>
+      <Choice :imageUrl="imageUrl" :WH="WH" />
     </el-drawer>
   </div>
 </template>
@@ -42,15 +42,28 @@ export default {
     return {
       xsadd: "",
       drawer: false,
-      imageUrl:""
+      imageUrl: "",
+      WH: null
     };
   },
   methods: {
     readFile(files) {
       var reader = new FileReader();
+
       reader.readAsDataURL(files);
-      reader.onload = e => {
+      reader.onload = async e => {
         this.imageUrl = e.target.result;
+
+        let WH = await new Promise((resolve, reject) => {
+          //获取宽高
+          let image = new Image();
+          image.src = e.target.result;
+          image.onload = function() {
+            resolve({ width: this.width, height: this.height });
+          };
+        });
+        this.WH = WH;
+
         this.xsadd = "filter:blur(5px)";
         this.openChout();
       };

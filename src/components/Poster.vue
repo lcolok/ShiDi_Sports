@@ -32,27 +32,50 @@ export default {
     chosenPicURL() {
       return pic[this.styleIndex];
     },
+    uploadedPic() {
+      let width,
+        height,
+        x = 0,
+        y = 0;
+      let WHrate = this.WH.width / this.WH.height;
+      let rate = fullWidth / fullHeight;
+      if (rate > WHrate) {
+        console.log("高比较长");
+        console.log(rate);
+        width = fullWidth;
+        height = fullHeight * (rate / WHrate);
+        y = (fullHeight-height)/2;
+      } else {
+        console.log("宽比较长");
+        console.log(rate);
+        width = fullWidth * (WHrate / rate);
+        height = fullHeight;
+         x = (fullWidth-width)/2;
+      }
+      return { width, height, x, y };
+    },
     painting() {
       return {
         width: fullWidth,
         height: fullHeight,
         views: [
-          
+          //用户自己上传的图片
           {
             type: "image",
             url: this.imageUrl,
-            left: 0,
-            top: 0,
-            width: fullWidth,
-            height: fullHeight
+            left: this.uploadedPic.x,
+            top: this.uploadedPic.y,
+            width: this.uploadedPic.width,
+            height: this.uploadedPic.height
           },
+          //风格包装
           {
             type: "image",
             url: this.chosenPicURL,
             top: 0,
             left: 0,
             width: fullWidth,
-            height: fullHeight,
+            height: fullHeight
           },
 
           // 本地图片
@@ -103,11 +126,12 @@ export default {
     }
   },
   created() {
-    console.log(this.imageUrl);
+    console.log(this.WH.width);
   },
   props: {
     chosenStyle: Number,
-    imageUrl: String
+    imageUrl: String,
+    WH: Object
   }
 };
 </script>

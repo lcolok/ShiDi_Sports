@@ -16,13 +16,13 @@
         v-else-if="item==2"
         @click="openliul(item)"
         class="styleChoose"
-        src="https://dn-shimo-attachment.qbox.me/mRdLTDGYcZEutnyW/demo2-1.png"
+        src="https://dn-shimo-attachment.qbox.me/8uRSXmBMs7w7ED8R/%E7%85%A7%E7%89%872-3.png"
       />
       <img
         v-else
         @click="openliul(item)"
         class="styleChoose"
-        src="https://dn-shimo-attachment.qbox.me/t914RfGAZ7MYyAz9/demo3-1.png"
+        src="https://dn-shimo-attachment.qbox.me/i4HYlXTBsd8yLKIN/%E7%85%A7%E7%89%873-3.png"
       />
     </el-carousel-item>
 
@@ -41,7 +41,7 @@
         content="请长按保存后，分享给朋友吧"
         placement="top"
       >
-        <Poster :chosenStyle="chosenStyle" :imageUrl="imageUrl"/>
+        <Poster :chosenStyle="chosenStyle" :imageUrl="imageUrl" :WH="WH"/>
       </el-tooltip>
       <!-- <span slot="footer" class="dialog-footer">
           <el-button @click="centerDialogVisible = false">取 消</el-button>
@@ -68,7 +68,8 @@ export default {
     };
   },
   props: {
-    imageUrl: String
+    imageUrl: String,
+    WH:Object
   },
   methods: {
     // 保存
